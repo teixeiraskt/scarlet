@@ -432,13 +432,15 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
-  // Array com as imagens - as 5 primeiras são visíveis, as 2 últimas são bloqueadas
+  // Array com as imagens - as 2 primeiras são as novas fotos visíveis, as 7 restantes são bloqueadas
   const mediaImages = [
-    { url: "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg", isVisible: true },
-    { url: "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg", isVisible: true },
-    { url: "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg", isVisible: true },
-    { url: "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg", isVisible: true },
-    { url: "/Screenshot_20250614_005534_Samsung Internet copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005559_Samsung Internet copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg", isVisible: false },
+    { url: "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg", isVisible: false },
+    { url: "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg", isVisible: false },
+    { url: "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg", isVisible: false },
+    { url: "/Screenshot_20250614_005534_Samsung Internet copy.jpg", isVisible: false },
     { url: "/media_image_1.png", isVisible: false },
     { url: "/media_image_2.png", isVisible: false },
   ]
