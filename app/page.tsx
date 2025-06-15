@@ -427,7 +427,7 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
-  // Array com todas as imagens - todas aparecerão com blur e cadeado
+  // Array com apenas 7 imagens únicas - todas aparecerão com blur e cadeado
   const mediaImages = [
     "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005559_Samsung Internet copy.jpg",
@@ -436,8 +436,6 @@ const MainContent = () => {
     "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
-    "/Screenshot_20250614_005650_Samsung Internet copy copy copy.jpg",
-    "/Screenshot_20250614_005559_Samsung Internet copy copy.jpg",
   ]
 
   return (
