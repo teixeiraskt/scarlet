@@ -613,18 +613,13 @@ const MainContent = () => {
 
           <div className="grid grid-cols-3 gap-1">
             {[
+              "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg",
+              "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg",
+              "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
+              "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
+              "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
               "/media_image_1.png",
               "/media_image_2.png",
-              "/media_image_3.png",
-              "/media_image_4.png",
-              "/media_image_5.png",
-              "/media_image_6.png",
-              "/media_image_7.png",
-              "/Screenshot_20250614_005543_Samsung Internet copy.jpg",
-              "/Screenshot_20250614_005807_Samsung Internet copy.jpg",
-              "/Screenshot_20250614_005709_Samsung Internet copy.jpg",
-              "/Screenshot_20250614_005733_Samsung Internet copy.jpg",
-              "/Screenshot_20250614_005534_Samsung Internet.jpg",
             ].map((imageUrl, index) => (
               <LockedMedia key={index} imageUrl={imageUrl} />
             ))}
