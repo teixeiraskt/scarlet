@@ -193,6 +193,13 @@ const LockedMedia = ({ imageUrl }: { imageUrl: string }) => (
   </div>
 )
 
+// Visible Media Component (sem lock)
+const VisibleMedia = ({ imageUrl }: { imageUrl: string }) => (
+  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
+    <img src={imageUrl} alt="Media" className="w-full h-full object-cover" />
+  </div>
+)
+
 // Timer utility
 const formatTime = (seconds: number) => {
   const minutes = Math.floor(seconds / 60)
@@ -425,6 +432,17 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
+  // Array com as imagens - as 5 primeiras são visíveis, as 2 últimas são bloqueadas
+  const mediaImages = [
+    { url: "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg", isVisible: true },
+    { url: "/Screenshot_20250614_005534_Samsung Internet copy.jpg", isVisible: true },
+    { url: "/media_image_1.png", isVisible: false },
+    { url: "/media_image_2.png", isVisible: false },
+  ]
+
   return (
     <div className="mb-4">
       <h2 className="text-lg font-bold mb-3">Assinaturas</h2>
@@ -612,17 +630,13 @@ const MainContent = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-1">
-            {[
-              "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg",
-              "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg",
-              "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
-              "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
-              "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
-              "/media_image_1.png",
-              "/media_image_2.png",
-            ].map((imageUrl, index) => (
-              <LockedMedia key={index} imageUrl={imageUrl} />
-            ))}
+            {mediaImages.map((media, index) => 
+              media.isVisible ? (
+                <VisibleMedia key={index} imageUrl={media.url} />
+              ) : (
+                <LockedMedia key={index} imageUrl={media.url} />
+              )
+            )}
           </div>
         </div>
       )}
