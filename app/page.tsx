@@ -101,7 +101,7 @@ const ProfileSection = () => {
       {/* Profile Picture */}
       <div className="flex items-center gap-4 mb-2 -mt-12">
         <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-pink-500 ring-offset-2">
-          <img src="/profile_pic.png" alt="Profile" className="w-full h-full object-cover" />
+          <img src="/Screenshot_20250614_002901_Instagram.jpg" alt="Profile" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/10" />
         </div>
       </div>
@@ -480,7 +480,7 @@ const MainContent = () => {
           <div className="p-4 border rounded-lg shadow-sm bg-white">
             <div className="flex items-start space-x-3 mb-3">
               <img
-                src="/profile_avatar.png"
+                src="/Screenshot_20250614_002901_Instagram.jpg"
                 alt="Profile"
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               />
@@ -537,7 +537,7 @@ const MainContent = () => {
           <div className="p-4 border rounded-lg shadow-sm bg-white">
             <div className="flex items-start space-x-3 mb-3">
               <img
-                src="/profile_avatar.png"
+                src="/Screenshot_20250614_002901_Instagram.jpg"
                 alt="Profile"
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               />
