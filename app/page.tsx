@@ -181,22 +181,15 @@ const ProfileSection = () => {
   )
 }
 
-// Locked Media Component
-const LockedMedia = ({ imageUrl }: { imageUrl: string }) => (
-  <div
-    className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden bg-cover bg-center"
-    style={{ backgroundImage: `url(${imageUrl})` }}
-  >
-    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
-      <Lock size={32} className="text-white opacity-80" />
-    </div>
-  </div>
-)
-
-// Visible Media Component (sem lock)
-const VisibleMedia = ({ imageUrl }: { imageUrl: string }) => (
-  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden">
-    <img src={imageUrl} alt="Media" className="w-full h-full object-cover" />
+// Blurred Media Component (todas as fotos com blur)
+const BlurredMedia = ({ imageUrl }: { imageUrl: string }) => (
+  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
+    <img 
+      src={imageUrl} 
+      alt="Media" 
+      className="w-full h-full object-cover filter blur-md" 
+    />
+    <div className="absolute inset-0 bg-black/20" />
   </div>
 )
 
@@ -432,17 +425,17 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
-  // Array com as imagens - as 2 primeiras são as novas fotos visíveis, as 7 restantes são bloqueadas
+  // Array com todas as imagens - todas aparecerão com blur
   const mediaImages = [
-    { url: "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg", isVisible: true },
-    { url: "/Screenshot_20250614_005559_Samsung Internet copy.jpg", isVisible: true },
-    { url: "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg", isVisible: false },
-    { url: "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg", isVisible: false },
-    { url: "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg", isVisible: false },
-    { url: "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg", isVisible: false },
-    { url: "/Screenshot_20250614_005534_Samsung Internet copy.jpg", isVisible: false },
-    { url: "/media_image_1.png", isVisible: false },
-    { url: "/media_image_2.png", isVisible: false },
+    "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005559_Samsung Internet copy.jpg",
+    "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
+    "/media_image_1.png",
+    "/media_image_2.png",
   ]
 
   return (
@@ -632,13 +625,9 @@ const MainContent = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-1">
-            {mediaImages.map((media, index) => 
-              media.isVisible ? (
-                <VisibleMedia key={index} imageUrl={media.url} />
-              ) : (
-                <LockedMedia key={index} imageUrl={media.url} />
-              )
-            )}
+            {mediaImages.map((imageUrl, index) => (
+              <BlurredMedia key={index} imageUrl={imageUrl} />
+            ))}
           </div>
         </div>
       )}
