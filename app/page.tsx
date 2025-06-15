@@ -189,7 +189,9 @@ const BlurredMedia = ({ imageUrl }: { imageUrl: string }) => (
       alt="Media" 
       className="w-full h-full object-cover filter blur-md" 
     />
-    <div className="absolute inset-0 bg-black/20" />
+    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+      <Lock size={32} className="text-white opacity-70" />
+    </div>
   </div>
 )
 
@@ -425,7 +427,7 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
-  // Array com todas as imagens - todas aparecerão com blur
+  // Array com todas as imagens - todas aparecerão com blur e cadeado
   const mediaImages = [
     "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005559_Samsung Internet copy.jpg",
@@ -434,8 +436,8 @@ const MainContent = () => {
     "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
-    "/media_image_1.png",
-    "/media_image_2.png",
+    "/Screenshot_20250614_005650_Samsung Internet copy copy copy.jpg",
+    "/Screenshot_20250614_005559_Samsung Internet copy copy.jpg",
   ]
 
   return (
