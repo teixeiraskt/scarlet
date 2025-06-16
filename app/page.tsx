@@ -101,7 +101,7 @@ const ProfileSection = () => {
       {/* Profile Picture */}
       <div className="flex items-center gap-4 mb-2 -mt-12">
         <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-pink-500 ring-offset-2">
-          <img src="/profile_pic.png" alt="Profile" className="w-full h-full object-cover" />
+          <img src="/Screenshot_20250614_002901_Instagram.jpg" alt="Profile" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/10" />
         </div>
       </div>
@@ -181,14 +181,16 @@ const ProfileSection = () => {
   )
 }
 
-// Locked Media Component
-const LockedMedia = ({ imageUrl }: { imageUrl: string }) => (
-  <div
-    className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden bg-cover bg-center"
-    style={{ backgroundImage: `url(${imageUrl})` }}
-  >
-    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
-      <Lock size={32} className="text-white opacity-80" />
+// Blurred Media Component (todas as fotos com blur)
+const BlurredMedia = ({ imageUrl }: { imageUrl: string }) => (
+  <div className="aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
+    <img 
+      src={imageUrl} 
+      alt="Media" 
+      className="w-full h-full object-cover filter blur-md" 
+    />
+    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+      <Lock size={32} className="text-white opacity-70" />
     </div>
   </div>
 )
@@ -425,6 +427,17 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
+  // Array com apenas 7 imagens únicas - todas aparecerão com blur e cadeado
+  const mediaImages = [
+    "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005559_Samsung Internet copy.jpg",
+    "/Screenshot_20250614_005543_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005807_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
+    "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
+  ]
+
   return (
     <div className="mb-4">
       <h2 className="text-lg font-bold mb-3">Assinaturas</h2>
@@ -480,7 +493,7 @@ const MainContent = () => {
           <div className="p-4 border rounded-lg shadow-sm bg-white">
             <div className="flex items-start space-x-3 mb-3">
               <img
-                src="/profile_avatar.png"
+                src="/Screenshot_20250614_002901_Instagram.jpg"
                 alt="Profile"
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               />
@@ -537,7 +550,7 @@ const MainContent = () => {
           <div className="p-4 border rounded-lg shadow-sm bg-white">
             <div className="flex items-start space-x-3 mb-3">
               <img
-                src="/profile_avatar.png"
+                src="/Screenshot_20250614_002901_Instagram.jpg"
                 alt="Profile"
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               />
@@ -612,16 +625,8 @@ const MainContent = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-1">
-            {[
-              "/media_image_1.png",
-              "/media_image_2.png",
-              "/media_image_3.png",
-              "/media_image_4.png",
-              "/media_image_5.png",
-              "/media_image_6.png",
-              "/media_image_7.png",
-            ].map((imageUrl, index) => (
-              <LockedMedia key={index} imageUrl={imageUrl} />
+            {mediaImages.map((imageUrl, index) => (
+              <BlurredMedia key={index} imageUrl={imageUrl} />
             ))}
           </div>
         </div>
