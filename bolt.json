@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build && npm run export",
+  "outputDirectory": "out",
+  "nodeVersion": "18"
+}
