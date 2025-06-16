@@ -134,7 +134,6 @@ const ProfileSection = () => {
 
       {/* Location */}
       <div className="flex items-center gap-1 text-sm text-gray-500 mb-4 pl-4">
-        {" "}
         <MapPin className="w-4 h-4 opacity-70" />
         <span>Foz do Iguaçu/RJ</span>
       </div>
@@ -227,7 +226,7 @@ const PlanModal = ({ isOpen, onClose, planDetails }: any) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
       <div className="bg-gray-50 rounded-2xl p-6 md:p-8 max-w-md w-full relative shadow-xl border border-gray-200">
         <div className="flex justify-center mb-4 -mt-2">
-          <img src="/assets/privacy_logo.png" alt="Privacy Logo" className="h-8 w-auto" />{" "}
+          <img src="/assets/privacy_logo.png" alt="Privacy Logo" className="h-8 w-auto" />
         </div>
 
         <button
@@ -258,19 +257,15 @@ const PlanModal = ({ isOpen, onClose, planDetails }: any) => {
         </ul>
 
         <div className="text-xs mb-6 space-y-1.5 text-center">
-          {" "}
           <div className="flex items-center justify-center font-bold text-lg mb-1 text-orange-500">
-            {" "}
             <Clock size={18} className="mr-2" />
             <span>Oferta termina em: {formatTime(timeLeft)}</span>
           </div>
           <div className="text-gray-500">
-            {" "}
             <span>{planDetails.offerValidity.clickOnly}</span>
           </div>
           <div className="flex items-center justify-center text-gray-500">
-            {" "}
-            <AlertTriangle size={14} className="mr-1.5 flex-shrink-0 text-orange-500" />{" "}
+            <AlertTriangle size={14} className="mr-1.5 flex-shrink-0 text-orange-500" />
             <span>{planDetails.offerValidity.reopening}</span>
           </div>
         </div>
@@ -427,7 +422,7 @@ const MainContent = () => {
     setIsLiked2(!isLiked2)
   }
 
-  // Array com apenas 7 imagens únicas - todas aparecerão com blur e cadeado
+  // Array com todas as imagens - todas aparecerão com blur e cadeado
   const mediaImages = [
     "/Screenshot_20250614_005650_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005559_Samsung Internet copy.jpg",
@@ -436,6 +431,8 @@ const MainContent = () => {
     "/Screenshot_20250614_005709_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005733_Samsung Internet copy copy.jpg",
     "/Screenshot_20250614_005534_Samsung Internet copy.jpg",
+    "/Screenshot_20250614_005650_Samsung Internet copy copy copy.jpg",
+    "/Screenshot_20250614_005559_Samsung Internet copy copy.jpg",
   ]
 
   return (
@@ -445,7 +442,6 @@ const MainContent = () => {
       <SubscriptionButton duration="1 mês" price="R$ 39,90" onClick={() => openModal(monthlyPlan)} />
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600 mb-6 px-2 space-y-1 sm:space-y-0">
-        {" "}
         <span className="font-bold text-black">Promoções</span>
         <span className="text-xs text-gray-500">clique em cada pacote para saber as informações</span>
       </div>
@@ -510,25 +506,13 @@ const MainContent = () => {
               Sozinha... mas nem por isso quietinha 😏 Me explorei todinha pensando em você 💦👅
             </p>
 
-            <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-900">
-              <video
-                src="/new_post_video.mp4"
-                className="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-50"
-                loop
-                autoPlay
-                muted
-                playsInline
+            <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-200">
+              <img 
+                src="/Screenshot_20250614_005650_Samsung Internet copy copy.jpg" 
+                alt="Post content" 
+                className="w-full h-full object-cover filter blur-md" 
               />
-              <video
-                src="/new_post_video.mp4"
-                className="absolute inset-0 w-full h-full object-contain z-10"
-                loop
-                autoPlay
-                muted
-                playsInline
-              />
-              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-20">
-                {" "}
+              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
                 <Lock size={48} className="text-white opacity-70" />
               </div>
             </div>
@@ -567,26 +551,13 @@ const MainContent = () => {
               Entre pensamentos e gemidos baixos… eu me encontrei. E, claro, só dava você na minha cabeça 😈
             </p>
 
-            <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-900">
-              {" "}
-              <video
-                src="/new_post_video_2.mp4"
-                className="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-50"
-                loop
-                autoPlay
-                muted
-                playsInline
+            <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-200">
+              <img 
+                src="/Screenshot_20250614_005559_Samsung Internet copy.jpg" 
+                alt="Post content" 
+                className="w-full h-full object-cover filter blur-md" 
               />
-              <video
-                src="/new_post_video_2.mp4"
-                className="absolute inset-0 w-full h-full object-contain z-10"
-                loop
-                autoPlay
-                muted
-                playsInline
-              />
-              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-20">
-                {" "}
+              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center">
                 <Lock size={48} className="text-white opacity-70" />
               </div>
             </div>
@@ -814,7 +785,8 @@ export default function App() {
           <TimerSection />
           <SecuritySection />
         </div>
-        <FAQSection /> <Footer />
+        <FAQSection />
+        <Footer />
       </div>
     </div>
   )
